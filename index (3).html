@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff; 
+            color: #000000; 
+        }
+
+        .wrapper {
+            display: grid;
+            grid-template-columns: 150px auto 150px;
+            grid-template-areas:
+                "header header header"
+                "sidebar-left main sidebar-right"
+                "footer footer footer";
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #000000;
+            color: #fff;
+            padding: 20px;
+            grid-area: header;
+        }
+
+        .header-top {   
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+        }
+
+        .header-top a {
+            color: #FFFFFF;
+            text-decoration: none;
+            margin-left: 20px;
+            transition: color 0.3s;
+        }
+
+        .header-top a:hover {
+            color: #808080;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav li {
+            margin-right: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #808080;
+        }
+
+        main {
+            padding: 20px;
+            grid-area: main;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 20px; 
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .product img:hover {
+            transform: scale(1.05);
+        }
+
+        .product-info {
+            text-align: center;
+        }   
+
+        .intro {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .intro-text {
+            flex: 1;
+            text-align: center;
+            font-size: 1.1em;
+        }
+
+        .intro-image img {
+            max-width: 88%;
+            height: auto; 
+            display: block; 
+            border-radius: 8px;
+        }
+
+        footer {
+            background-color: #1c1c1c;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            grid-area: footer;
+        }
+
+        .website-name {
+            text-align: center;
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        .price-icon {
+            width: 20px;
+            height: 20px;
+            background-color: #333; 
+            border: none;
+            cursor: pointer; 
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s;
+        }
+
+        .price-icon::after {
+            content: "+";
+            color: white; 
+            font-size: 14px;
+            line-height: 20px; 
+        }
+
+        .price-icon:hover {
+            background-color: #ff8c00;
+        }
+
+        .contact-info {
+            position: absolute;
+            top: 5px; 
+            left: 20px; 
+            background-color: #000000;
+            color: #fff;
+            padding: 10px; 
+            border-radius: 5px; 
+        }
+
+        #informacion-de-contacto {
+            text-align: center;
+        }
+
+        #informacion-de-contacto h2 {
+            font-size: 36px;
+        }
+
+        .redes-sociales {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .red-social {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .red-social img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .direccion {
+            text-align: center;
+        }
+        
+        .product img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            transition: transform 0.3s;
+            width: 100%;
+            height: 400px; /* Altura deseada */
+            object-fit: cover;
+        }
+
+        .intro-image img {
+            max-width: 100%;
+            height: auto; 
+            display: block; 
+            border-radius: 8px;
+            width: 100%;
+            height: 400px; /* Altura deseada */
+            object-fit: cover;
+        }
+
+        .product-info {
+            text-align: center;
+            margin-bottom: 20px; /* Ajusta este valor según sea necesario */
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="contact-info">
+        <p>Numero de contacto: 301 3957268</p>
+        <p>Horarios de Atencion: Miercoles - Domingo 4PM - 4AM</p>
+    </div>
+    
+    <div class="wrapper">
+        <header>
+            <div class="header-top">
+                <a href="acceder.html">Iniciar Sesion</a>
+                <a href="crear.html">Crear Cuenta</a>
+            </div>
+            <div style="text-align: center;">
+                <img src="/JPG/LOGOMAIN.jpg" alt="Imagen del encabezado" class="header-image" width="500" height="200">
+            </div>
+        </header>
+            
+            <nav>
+                <ul>
+                    <li><a href="#quienes-somos">Quienes somos</a></li>
+                    <li><a href="#ubicacion">Ubicacion</a></li>
+                    <li><a href="#licores">Licores</a></li>
+                    <li><a href="#cervezas">Cervezas</a></li>
+                    <li><a href="#cigarillos">Cigarillos</a></li>
+                    <li><a href="#snacks">Snacks</a></li>
+                    <li><a href="#bebidas-energeticas">Bebidas energeticas</a></li>
+                    <li><a href="#informacion-de-contacto">Informacion de contacto</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section id="quienes-somos">
+                <h1 style="text-align: center; font-size: 36px;">¿Quiénes somos?</h1>
+                <div class="intro">
+                    <div class="intro-text">
+                        <p>Somos Licorera JP, una de las licoreras más grandes y reconocidas de Niquia, 
+                            comprometida en brindarte la mejor experiencia en licores, snacks y variedades.
+                             Nos enorgullece ser tu destino preferido para encontrar productos de alta calidad 
+                             y disfrutar de un servicio excepcional. Con una amplia gama de opciones, desde los 
+                             licores más selectos hasta los snacks más deliciosos, estamos aquí para satisfacer 
+                             todos tus gustos y necesidades. Descubre por qué somos la elección número uno de 
+                             tantos clientes en Niquia y más allá. ¡Haz de cada momento una celebración con Licorera JP!</p>
+                    </div>
+                    <div class="intro-image">
+                        <img src="/JPG/main1.jpg" alt="Imagen de Bebidas" class="header-image" width="500" height="400">
+                    </div>
+                </div>
+            </section>
+            
+            <section id="ubicacion">
+                <h2 style="text-align: center;font-size: 36px;">Ubicacion</h2>
+                <div class="intro">
+                    <div class="intro-image">
+                        <img src="/JPG/main2.png" alt="Ubicacion Image" class="header-image" width="600" height="500">
+                    </div>
+                    <div class="intro-text">
+                        <p>Estamos ubicados cerca del centro comercial puerta del norte dirígete hacia 
+                            la Avenida 33. Una vez en la Avenida 33, avanza hacia cerro azul, hasta llegar 
+                            a la glorieta de torrenova, tambien puedes encontrarnos llegando por medio de 
+                            transporte publico y estamos ubicados en la AV. 33 #57-20 Hermosa Provincia/niquia.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="licores">
+                <h2 style="text-align: center;font-size: 36px;"><br>NUESTROS PRODUCTOS<br><br></h2>
+            </section>
+        
+           
+            <section id="licores">
+                
+                <h2 style="text-align: center;">licores</h2>
+                <div class="product-grid">
+                     <div class="product">
+                        <img src="/JPG/Whisky Johnnie Walker Black Label.jpg" alt="Ron Zacapa Centenario 23"width="400" height="100">
+                        <div class="product-info"> 
+                             <h3>Whisky Johnnie Walker Black Label</h3>
+                            <p>$1.099.900 <button class="price-icon"></button></p>
+                        </div>
+                    </div>
+
+                    <div class="product">
+                        <img src="/JPG/Soda Bretaña Grande.jpg" alt="Ron Zacapa Centenario 23"width="400" height="100">
+                        <div class="product-info"> 
+                            <h3>Ron Zacapa Centenario 23</h3>
+                            <p>$272.900 <button class="price-icon"></button></p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="/JPG/Tequila Don Julio Reposado.jpeg" alt="Tequila Don Julio Reposado"width="400" height="100">
+                        <div class="product-info"> 
+                            <h3>Tequila Don Julio Reposado</h3>
+                            <p>$271.909 <button class="price-icon"></button></p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="/JPG/Gin Bombay Sapphire Azul Orginal 1L.jpeg" alt="Gin Bombay Sapphire"width="400" height="100">
+                        <div class="product-info"> 
+                            <h3>Gin Bombay Sapphire Azul Orginal 1L</h3>
+                            <p>$220.900 <button class="price-icon"></button></p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="/JPG/Ron Viejo de Caldas 3 Años Tradicional Garrafa.jpg" alt="Ron Viejo de Caldas 3 Años Tradicional Garrafa"width="400" height="100">
+                        <div class="product-info"> 
+                            <h3>Ron Viejo de Caldas 3 Años Tradicional Garrafa</h3>
+                            <p>$128,500 <button class="price-icon"></button></p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="/JPG/Ron Viejo de Caldas 3 Años Tradicional Mediana.jpg" alt="Ron Viejo de Caldas 3 Años Tradicional Mediana" width="400" height="100">
+                        <div class="product-info"> 
+                            <h3>Ron Viejo de Caldas 3 Años Tradicional Mediana</h3>
+                            <p>$30,500 <button class="price-icon"></button></p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="/JPG/Aguardiente Antioqueño Tapa Roja 1L Vidrio.jpg" alt="Aguardiente Antioqueño Tapa Roja – 1L Vidrio"width="400" height="100">
+                        <div class="product-info"> 
+                            <h3>Aguardiente Antioqueño Tapa Roja  1L Vidrio</h3>
+                            <p>$59,900 <button class="price-icon"></button></p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="/JPG/Ron Viejo De Caldas (8 Años) 12 Vidrio.jpg" alt="Ron Viejo De Caldas (8 Años)"width="400" height="100">
+                        <div class="product-info"> 
+                            <h3>Ron Viejo De Caldas (8 Años) 1/2 Vidrio</h3>
+                            <p>$102,500 <button class="price-icon"></button></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="cervezas">
+                <h2 style="text-align: center;">Cervezas</h2>
+                <div class="product-grid">
+                    <div class="product">
+                        <img src="/JPG/6 Pack de Cerveza Águila Original Lata.jpg" alt="6 Pack de Cerveza Águila Original Lata" width="400" height="100">
+                        <div class="product-info"> 
+                            <h3>6 Pack de Cerveza Águila Original Lata</h3>
+                            <p>$19,900 <button class="price-icon"></button></p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="/JPG/6 Pack de Cerveza CSC Dorada Lata.jpg" alt="6 Pack de Cerveza Club Social Colombia Dorada Lata" width="400" height="100">
+                        <div class="product-info"> 
+                            <h3>6 Pack de Cerveza CSC Dorada Lata</h3>
+                            <p>$21,900<button class="price-icon"></button></p>
+                        </div>
+                    </div>
+                        <div class="product">
+                            <img src="/JPG/Paca de Cerveza Corona Botella - 24 Und.1.jpg" alt="Paca de Cerveza Corona - 24 Und." width="400" height="100">
+                            <div class="product-info"> 
+                                <h3>Paca de Cerveza Corona Botella - 24 Und.</h3>
+                                <p>$85,900 <button class="price-icon"></button></p>
+                            </div>
+                        </div>
+                    <div class="product">
+                        <img src="/JPG/PD Cerveza Heineken - 24 Und.jpg" alt="Paca de Cerveza Heineken - 24 Und." width="400" height="100">
+                        <div class="product-info"> 
+                            <h3>PD Cerveza Heineken - 24 Und</h3>
+                            <p>$85,900 <button class="price-icon"></button></p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="/JPG/Paca de Cerveza Andina - 24 Und..jpg" alt="Paca de Cerveza Andina - 24 Und." width="400" height="100">
+                        <div class="product-info"> 
+                            <h3>Paca de Cerveza Andina - 24 Und.</h3>
+                            <p>$70,900 <button class="price-icon"></button></p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="/JPG/Paca de Cerveza Poker - 24 Und1.png" alt="Paca de Cerveza Poker - 24    Und." width="400" height="100">
+                        <div class="product-info"> 
+                            <h3>Paca de Cerveza Poker - 24 Und.</h3>
+                            <p>$75,900 <button class="price-icon"></button></p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="/JPG/Paca de Cerveza Águila Light - 24 Und.1.jpg" alt="Paca de Cerveza Águila Light - 24 Und." width="400" height="100">
+                        <div class="product-info"> 
+                            <h3>Paca de Cerveza Águila Light - 24 Und.</h3>
+                            <p>$79,900 <button class="price-icon"></button></p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="/JPG/kkkkkkkkkkkkkkkkk1.png" alt="Caja de Cerveza BBC - 12 Und." width="400" height="100">
+                        <div class="product-info"> 
+                            <h3>Caja de Cerveza BBC - 12 Und.</h3>
+                            <p>$42,500 <button class="price-icon"></button></p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="/JPG/Caja de Cerveza Miller Lite - 12 Und.1.jpg" alt="Caja de Cerveza Miller Lite - 12 Und." width="400" height="100">
+                        <div class="product-info"> 
+                            <h3>Caja de Cerveza Miller Lite - 12 Und.</h3>
+                            <p>$39,900 <button class="price-icon"></button></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+
+            <section id="cigarillos">
+                <h2 style="text-align: center;">cigarillos</h2>
+                <div class="product-grid">
+                    <div class="product">
+                        <img src="/JPG/Cigarrillos Chesterfield Blue - 1Paq.jpg" alt="Cigarrillos Chesterfield Blue - 1Paq" width="400" height="100">
+                        <div class="product-info"> 
+                            <h3>Cigarrillos Chesterfield Blue - 1Paq</h3>
+                            <p>$9,500 <button class="price-icon"></button></p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="/JPG/Cigarrillos Lucky Strike - 1Paq.jpg" alt="Cigarrillos Lucky Strike - 1Paq" width="400" height="100">
+                        <div class="product-info"> 
+                            <h3>Cigarrillos Lucky Strike - 1Paq</h3>
+                            <p>$12,900 <button class="price-icon"></button></p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="/JPG/Cigarrillos Marlboro - 1Paq1.jpg" alt="Cigarrillos Marlboro - 1Paq" width="400" height="100">
+                        <div class="product-info"> 
+                            <h3>Cigarrillos Marlboro - 1Paq</h3>
+                            <p>$11,500 <button class="price-icon"></button></p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="/JPG/Cigarrillos Camel - 1Paq1.jpg" alt="Cigarrillos Camel - 1Paq" width="400" height="100">
+                        <div class="product-info"> 
+                            <h3>Cigarrillos Camel - 1Paq</h3>
+                            <p>$10,900 <button class="price-icon"></button></p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="/JPG/Cigarrillos Pall Mall - 1Paq.jpg" alt="Cigarrillos Pall Mall - 1Paq" width="400" height="100">
+                        <div class="product-info"> 
+                            <h3>Cigarrillos Pall Mall - 1Paq</h3>
+                            <p>$8,900 <button class="price-icon"></button></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+                            
+                    
+
+            <section id="snacks">
+                <h2 style="text-align: center;">snacks</h2>
+                <div class="product-grid">
+                    <div class="product">
+                        <img src="/JPG/Soda Bretaña Grande.jpg" alt="Soda Bretaña Grande"width="400" height="100">
+                        <div class="product-info"> 
+                            <h3>Soda Bretaña Grande</h3>
+                            <p>$6,000 <button class="price-icon"></button></p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="/JPG/Soda Saborizada Lemongrass Juniper.jpg" alt="Soda Saborizada Lemongrass Juniper"width="400" height="100">
+                        <div class="product-info"> 
+                            <h3>Soda Saborizada Lemongrass Juniper</h3>
+                            <p>$6,000 <button class="price-icon"></button></p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="/JPG/Soda Saborizada Hatsu Frambuesa.jpg" alt="Soda Saborizada Hatsu Frambuesa"width="400" height="100">
+                        <div class="product-info"> 
+                            <h3>Soda Saborizada Hatsu Frambuesa</h3>
+                            <p>$3,600 <button class="price-icon"></button></p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="/JPG/Maní De Arándanos La Especial Personal.jpg" alt="Maní De Arándanos La Especial Personal"width="400" height="100">
+                        <div class="product-info"> 
+                            <h3>Maní De Arándanos La Especial Personal</h3>
+                            <p>$2,500 <button class="price-icon"></button></p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="/JPG/Pasabocas Papas Pringles Sabor Cebolla.jpg" alt="Pasabocas Papas Pringles Sabor Cebolla"width="400" height="100">
+                        <div class="product-info"> 
+                            <h3>Pasabocas Papas Pringles Sabor Cebolla</h3>
+                            <p>$15,900 <button class="price-icon"></button></p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="/JPG/Maní con Pasas La Especial.jpg" alt="Maní con Pasas La Especial"width="400" height="100">
+                        <div class="product-info"> 
+                            <h3>Maní con Pasas La Especial</h3>
+                            <p>$7,500 <button class="price-icon"></button></p>
+                        </div>
+                    </div>
+          
+                    <div class="product">
+                         <img src="/JPG/Pasabocas De Todito BBQ.jpg" alt="Pasabocas De Todito BBQ" width="400" height="100">
+                        <div class="product-info"> 
+                            <h3>Pasabocas De Todito BBQ</h3>
+                            <p>$8,500 <button class="price-icon"></button></p>
+                        </div>
+                    </div>
+
+                     <div class="product">
+                         <img src="/JPG/Pasabocas De Todito Limón.jpg" alt="Pasabocas De Todito Limón" width="400" height="100">
+                        <div class="product-info"> 
+                            <h3>Pasabocas De Todito Limón</h3>
+                            <p>$8,500 <button class="price-icon"></button></p>
+                        </div>
+                    </div>
+
+
+                     <div class="product">
+                       <img src="/JPG/PDM Naturales - Bolsa Grande.jpg" alt="Palomitas de Maíz Naturales - Bolsa Grande" width="400" height="100">
+                         <div class="product-info"> 
+                            <h3>PDM Naturales - Bolsa Grande</h3>
+                            <p>$4,500 <button class="price-icon"></button></p>
+                        </div>
+                    </div>
+
+                    
+                     <div class="product">
+                       <img src="/JPG/Palomitas de Maíz Sabor Mantequilla - Bolsa Grande.jpeg" alt="Palomitas de Maíz Sabor Mantequilla - Bolsa Grande" width="400" height="100">
+                         <div class="product-info"> 
+                            <h3>Palomitas de Maíz Sabor Mantequilla - Bolsa Grande</h3>
+                            <p>$5,000 <button class="price-icon"></button></p>
+                        </div>
+                    </div>
+                    
+            </section>
+
+            <section id="bebidas-energeticas">
+                <h2 style="text-align: center;">bebidas energeticas</h2>
+                <div class="product-grid">
+                    <div class="product">
+                        <img src="/JPG/Monster Energy Blue (Energizante).jpg" alt="Monster Energy Blue"width="400" height="100">
+                        <div class="product-info"> 
+                            <h3>Monster Energy Blue (Energizante)</h3>
+                            <p>$8,500 <button class="price-icon"></button></p>
+                        </div>
+                    </div>
+
+                     <div class="product">
+                       <img src="/JPG/Red Bull (Energizante).jpg" alt="Red Bull"width="400" height="100">
+                        <div class="product-info"> 
+                           <h3>Red Bull (Energizante)</h3>
+                            <p>$7,100 <button class="price-icon"></button></p>
+                        </div>
+                    </div>
+
+
+                    
+                    <div class="product">
+                        <img src="/JPG/ME Ultra Violet (Energizante).jpg" alt="Monster Energy Ultra Violet"  width="400" height="100">
+                        <div class="product-info"> 
+                            <h3>ME Ultra Violet (Energizante)</h3>
+                            <p>$8,500 <button class="price-icon"></button></p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <img src="/JPG/Burn Energy Drink (Energizante).jpeg" alt="Burn Energy Drink" width="400" height="100">
+                        <div class="product-info"> 
+                            <h3>Burn Energy Drink (Energizante)</h3>
+                            <p>$6,500 <button class="price-icon"></button></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+                <section id="informacion-de-contacto">
+                    <h2>Informacion de Contacto</h2>
+                    <div class="redes-sociales">
+                        <div class="red-social">
+                            <img src="/JPG/iii.jpg" alt="Instagram">
+                            <span>licorerajp1</span>
+                        </div>
+                        <div class="red-social">
+                            <img src="/JPG/www.jpg" alt="WhatsApp">
+                            <span>301 395-7268</span>
+                        </div>
+                    </div>
+                </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 My Website. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
